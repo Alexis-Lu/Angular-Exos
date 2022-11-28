@@ -1,0 +1,19 @@
+<app-exercice3></app-exercice3>
+<table>
+  <tr>
+    <th (click)="orderBy('index')">Index</th>
+    <th (click)="orderBy('amount')">Amount</th>
+    <th (click)="orderBy('balance')">Balance</th>
+    <th (click)="orderBy('label')">Label</th>
+    <th (click)="orderBy('date')">Date</th>
+  </tr>
+  <a *ngFor="let data of transactions" routerLink="/infos/{{ data.id }}">
+    <tr>
+      <td>{{ data.id }}</td>
+      <td>{{ data.amount }}</td>
+      <td>{{ data.balance }}</td>
+      <td>{{ data.label }}</td>
+      <td>{{ data.date }}</td>
+    </tr>
+  </a>
+</table>

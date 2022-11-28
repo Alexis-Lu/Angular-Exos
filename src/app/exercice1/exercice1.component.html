@@ -1,0 +1,70 @@
+<div>
+  <div>
+    <input
+      type="text"
+      #val
+      (keyup)="getValue(val.value)"
+      placeholder="Nom"
+      name="username"
+    />
+  </div>
+  <h1
+    [ngStyle]="{
+      'font-family': selectedPolice,
+      'font-size': size + 'px',
+      'text-align': position
+    }"
+  >
+    Hello {{ nom }}
+  </h1>
+  <div>
+    <select [(ngModel)]="selectedPolice">
+      <option *ngFor="let police of polices">
+        {{ police }}
+      </option>
+    </select>
+  </div>
+
+  <input
+    type="number"
+    #numVal
+    (input)="getSize(numVal.value)"
+    placeholder="Taille police"
+  />
+
+  <div>
+    <div>
+      <input
+        type="radio"
+        id="left"
+        name="text"
+        value="left"
+        checked
+        [(ngModel)]="position"
+      />
+      <label for="left">gauche</label>
+    </div>
+
+    <div>
+      <input
+        type="radio"
+        id="center"
+        name="text"
+        value="center"
+        [(ngModel)]="position"
+      />
+      <label for="center">centré</label>
+    </div>
+
+    <div>
+      <input
+        type="radio"
+        id="right"
+        name="text"
+        value="right"
+        [(ngModel)]="position"
+      />
+      <label for="right">droite</label>
+    </div>
+  </div>
+</div>

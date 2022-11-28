@@ -1,0 +1,19 @@
+<div>
+  <h1>Calculatrice</h1>
+  <input type="number" #numVal1 (input)="getNumber(numVal1.value, true)" />
+  <select [(ngModel)]="selectedOperation">
+    <option *ngFor="let operation of operations">
+      {{ operation }}
+    </option>
+  </select>
+  <input type="number" #numVal2 (input)="getNumber(numVal2.value, false)" />
+  <button (click)="calcul()">Calcul</button>
+  {{ result }}
+
+  <ul>
+    <li *ngFor="let item of history">
+      {{ item.time }} Calcul : {{ item.n1 }} {{ item.operation }}
+      {{ item.n2 }} = {{ item.result }}
+    </li>
+  </ul>
+</div>
