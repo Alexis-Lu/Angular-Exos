@@ -14,6 +14,7 @@
     <li *ngFor="let item of history">
       {{ item.time }} Calcul : {{ item.n1 }} {{ item.operation }}
       {{ item.n2 }} = {{ item.result }}
+      <button (click)="handleDelete(item)">Delete</button>
     </li>
   </ul>
 </div>

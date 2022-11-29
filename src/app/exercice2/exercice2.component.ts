@@ -45,4 +45,8 @@ export class Exercice2Component {
       this.firstNumber + this.selectedOperation + this.secondNumber
     );
   }
+
+  handleDelete(val: any) {
+    this.history.splice(this.history.indexOf(val), 1);
+  }
 }
